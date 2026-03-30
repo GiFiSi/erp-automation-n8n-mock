@@ -28,9 +28,9 @@ Como a infraestrutura foi construída do zero (Self-hosted), as seguintes camada
 * **Governança:** Mascaramento de dados sensíveis na camada de orquestração para alinhar as rotinas aos princípios da LGPD.
 
 ## 💡 Impacto de Negócios Simulado
-* **Redução de OPEX:** Eliminação de R$ X/mês em licenças de plataformas de integração comerciais.
-* **Eficiência Operacional:** Redução de processos manuais de exportação de planilhas de DRE que levavam horas para rodar em poucos minutos.
-* **Democratização dos Dados:** Descentralização da inteligência de vendas para o time comercial operar com preços e fretes em tempo real.
+* **Redução de OPEX:** Eliminação de custos recorrentes com licenças de plataformas iPaaS (Zapier/Make) e infraestrutura Cloud, economizando aproximadamente R$ 1.000,00/mês em custos diretos de software.
+* **Eficiência Operacional:** Automação total de processos de exportação e cruzamento de dados tributários (DIFAL), reduzindo o tempo de processamento manual de horas para segundos.
+* **Democratização dos Dados:** Centralização da inteligência de faturamento e frete, permitindo tomada de decisão baseada em dados em tempo real pela diretoria.
 
 ---
-*Desenvolvido por [Seu Nome/LinkedIn] - Focado em entregar inteligência de dados com eficiência de recursos.*
+**Desenvolvido por [Guilherme Ferreira Santos](https://www.linkedin.com/in/guilherme-ferreira-santos-94619b23a/)** *Focado em entregar inteligência de dados com máxima eficiência de recursos.*
