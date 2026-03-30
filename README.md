@@ -13,13 +13,13 @@ Este projeto demonstra a construção de um pipeline de dados ponta a ponta (ETL
 
 ## 🏗️ Arquitetura da Solução
 
-O fluxo foi desenhado para eliminar processos manuais no setor financeiro e logístico, garantindo que a diretoria tenha acesso a dados em tempo real.
+O fluxo foi desenhado para eliminar processos manuais no setor financeiro e logístico, centralizando a inteligência e garantindo que a diretoria tenha acesso a dados em tempo real.
 
-1. **Ingestão (Extract):** Scripts Python rodam de forma agendada consultando a API REST do ERP (ex: Bling) para extrair dados de faturamento, pedidos e impostos (DIFAL).
-2. **Orquestração & Transformação (Transform):** Um servidor self-hosted do **n8n** (rodando em Docker) atua como o maestro do pipeline. Ele limpa os payloads JSON, cruza os dados logísticos e aplica as regras de negócio.
-3. **Carga (Load):** Os dados tratados são enviados e estruturados automaticamente como um Data Lake em Google Sheets (via Google Apps Script/API).
-4. **Visualização (Analytics):** O Looker Studio consome essas bases em tempo real, gerando painéis executivos para o C-Level.
-5. **Notificação (IoT/Webhook):** O n8n dispara um resumo financeiro diário diretamente para o WhatsApp da diretoria corporativa.
+1. **Orquestração e Ingestão (Extract):** Um servidor self-hosted do **n8n** (rodando em contêiner Docker) atua como o maestro central do pipeline. Através de *workflows* agendados (Triggers), o n8n utiliza *Nodes* de execução de código nativo (**Python**) para consultar a API REST do ERP corporativo (ex: Bling), extraindo dados de faturamento, pedidos e impostos.
+2. **Transformação (Transform):** Dentro do próprio fluxo do n8n, os payloads JSON complexos são manipulados e limpos. É nesta etapa que os dados logísticos são cruzados e as lógicas tributárias (como o cálculo de DIFAL) são aplicadas em memória.
+3. **Carga (Load):** Os dados tratados são enviados e estruturados automaticamente como um Data Lake em planilhas do Google Sheets (via Google Apps Script / Google API).
+4. **Visualização (Analytics):** O Looker Studio consome essas bases estruturadas em tempo real, gerando painéis executivos de Business Intelligence para o C-Level.
+5. **Notificação (IoT/Webhook):** O workflow do n8n é finalizado disparando um resumo financeiro diário diretamente para o WhatsApp da diretoria corporativa via API.
 
 ## 🛡️ Segurança e Infraestrutura
 Como a infraestrutura foi construída do zero (Self-hosted), as seguintes camadas de segurança foram aplicadas:
